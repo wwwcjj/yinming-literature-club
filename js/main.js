@@ -1,4 +1,4 @@
-// 未名文学社 — 脚本文件
+// 嘤鸣文学评论社 — 脚本文件
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -35,5 +35,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    console.log('📚 未名文学社网站已加载完成，欢迎来访！');
+    console.log('📚 嘤鸣文学评论社网站已加载完成，欢迎来访！');
 });
