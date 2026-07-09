@@ -1,0 +1,329 @@
+/* ===== 未名文学社 — 样式文件 ===== */
+
+/* --- 基础重置 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+    color: #2c2c2c;
+    background: #faf8f5;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 导航栏 --- */
+.navbar {
+    background: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e8e0d5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 12px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+}
+
+.brand-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #5a3e2b;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #7a6b5a;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #5a3e2b;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #c4a882;
+}
+
+/* --- 主视觉 Header --- */
+.hero {
+    background: linear-gradient(135deg, #f5f0e8 0%, #efe6d5 100%);
+    padding: 100px 0 80px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    color: #5a3e2b;
+    letter-spacing: 8px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #8a7b6a;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* --- 按钮 --- */
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    margin: 0 8px;
+}
+
+.btn-primary {
+    background: #5a3e2b;
+    color: #faf8f5;
+    border: 1px solid #5a3e2b;
+}
+
+.btn-primary:hover {
+    background: #4a2e1b;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #5a3e2b;
+    border: 1px solid #5a3e2b;
+}
+
+.btn-outline:hover {
+    background: #5a3e2b;
+    color: #faf8f5;
+}
+
+/* --- 通用 Section --- */
+.section {
+    padding: 70px 0;
+}
+
+.section-alt {
+    background: #f5f0e8;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #5a3e2b;
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+/* --- 新闻卡片 --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.news-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #e8e0d5;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: #b8a898;
+    margin-bottom: 8px;
+}
+
+.news-title {
+    font-size: 1.15rem;
+    color: #5a3e2b;
+    margin-bottom: 10px;
+}
+
+.news-excerpt {
+    color: #7a6b5a;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* --- 作品卡片 --- */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.work-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid #e8e0d5;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.work-tag {
+    display: inline-block;
+    padding: 2px 12px;
+    background: #efe6d5;
+    color: #5a3e2b;
+    font-size: 0.8rem;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.work-title {
+    font-size: 1.15rem;
+    color: #5a3e2b;
+    margin-bottom: 4px;
+}
+
+.work-author {
+    font-size: 0.85rem;
+    color: #b8a898;
+    margin-bottom: 12px;
+}
+
+.work-preview {
+    color: #7a6b5a;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.work-link {
+    color: #5a3e2b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.work-link:hover {
+    color: #8a6b4a;
+}
+
+/* --- 联系我们 --- */
+.contact-info {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 36px;
+    border-radius: 8px;
+    border: 1px solid #e8e0d5;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    color: #5a4a3a;
+    font-size: 0.95rem;
+}
+
+.contact-info strong {
+    color: #5a3e2b;
+}
+
+/* --- 关于页面 --- */
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #e8e0d5;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.about-content p {
+    margin-bottom: 18px;
+    text-indent: 2em;
+    color: #5a4a3a;
+}
+
+/* --- 页脚 --- */
+.footer {
+    background: #5a3e2b;
+    color: #d8cec0;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.footer-sub {
+    font-size: 0.8rem;
+    color: #b8a898;
+}
+
+/* --- 回应式设计 --- */
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    .nav-links {
+        gap: 12px;
+    }
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+}
