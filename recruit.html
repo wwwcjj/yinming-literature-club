@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>招新 - 嘤鸣文学评论社</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* --- 招新页专属样式 --- */
+        .recruit-content {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .recruit-card {
+            background: #fff;
+            padding: 44px 48px;
+            border-radius: 8px;
+            border: 1px solid #e8e0d5;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            margin-bottom: 24px;
+        }
+
+        .recruit-card h2 {
+            text-align: center;
+            font-size: 1.35rem;
+            color: #5a3e2b;
+            letter-spacing: 4px;
+            margin-bottom: 26px;
+            font-weight: 600;
+        }
+
+        .recruit-card p {
+            margin-bottom: 16px;
+            text-indent: 2em;
+            color: #5a4a3a;
+            line-height: 2;
+        }
+
+        .recruit-card p.no-indent {
+            text-indent: 0;
+        }
+
+        .epigraph {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #5a3e2b;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+            text-indent: 0;
+            font-weight: 600;
+        }
+
+        .epigraph-src {
+            text-align: center;
+            color: #b8a898;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-indent: 0;
+        }
+
+        .quote-block {
+            border-left: 3px solid #c4a882;
+            background: #faf8f5;
+            padding: 14px 22px;
+            margin: 22px 0;
+            color: #5a4a3a;
+            font-style: italic;
+            line-height: 2;
+        }
+
+        .quote-block p {
+            text-indent: 0;
+            margin-bottom: 0;
+        }
+
+        .honor-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px;
+        }
+
+        .honor-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: #5a4a3a;
+            line-height: 1.9;
+        }
+
+        .honor-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #c4a882;
+        }
+
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .dept-card {
+            background: #faf8f5;
+            border: 1px solid #e8e0d5;
+            border-radius: 8px;
+            padding: 18px 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dept-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+        }
+
+        .dept-card h4 {
+            color: #5a3e2b;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .dept-card p {
+            text-indent: 0;
+            margin-bottom: 0;
+            font-size: 0.88rem;
+            color: #7a6b5a;
+            line-height: 1.8;
+        }
+
+        .activity-item {
+            margin-bottom: 16px;
+            color: #5a4a3a;
+            line-height: 2;
+        }
+
+        .activity-item strong {
+            color: #5a3e2b;
+        }
+
+        .closing {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .closing p {
+            text-indent: 0;
+            margin-bottom: 14px;
+        }
+
+        .closing .cta {
+            font-size: 1.15rem;
+            color: #5a3e2b;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-icon">📖</span>
+                <span class="brand-text">嘤鸣文学评论社</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="works/index.html">作品展示</a></li>
+                <li><a href="recruit.html" class="active">招新</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" style="padding: 70px 0 56px;">
+        <div class="container">
+            <h1 class="hero-title">2026 秋季招新</h1>
+            <p class="hero-subtitle">嘤其鸣矣，求其友声</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 50px;">
+        <div class="container">
+            <div class="recruit-content">
+
+                <!-- 开场 -->
+                <div class="recruit-card">
+                    <p class="epigraph">「嘤其鸣矣，寻其友声。」</p>
+                    <p class="epigraph-src">——《诗经·小雅·伐木》</p>
+                    <p>「没有人会问：金丝雀的叫声或者日落的彩霞有什么用处！」关于文学，就像玫瑰就是玫瑰，花香无义。当你沉殢在文学的花海中，是否期待会碰到一同喜好的惜香客。文学是情感的传染，文学是存在之真理的敞开。</p>
+                    <p>鸣鸟嘤嘤，文思如觱沸。同窗共友，落笔自滋蕃。</p>
+                    <p class="no-indent" style="text-align: center; color: #5a3e2b; font-weight: 600; letter-spacing: 2px;">嘤鸣文学评论社，期待你的到来！</p>
+                </div>
+
+                <!-- 社团介绍 -->
+                <div class="recruit-card">
+                    <h2>社团介绍</h2>
+                    <ul class="honor-list">
+                        <li>校内唯一承担文学社和文学评论社的双重身份的社团</li>
+                        <li>浙江省文联、浙江省文艺评论家协会在省内高校设立的艺术评论学生社团</li>
+                        <li>宁波唯一一家高校文艺评论社团</li>
+                        <li>浙江省高校文艺评论联盟中首批十所高校社团成员之一</li>
+                        <li>三度蝉联宁波大学五星级社团</li>
+                    </ul>
+                </div>
+
+                <!-- 有关我们 -->
+                <div class="recruit-card">
+                    <h2>有关我们</h2>
+                    <div class="dept-grid">
+                        <div class="dept-card">
+                            <h4>社长 / 副社长</h4>
+                            <p>统筹组织活动、与省评协、校团委进行交流。</p>
+                        </div>
+                        <div class="dept-card">
+                            <h4>办公室</h4>
+                            <p>负责社团活动材料提交、财务管理等宏观运营任务。</p>
+                        </div>
+                        <div class="dept-card">
+                            <h4>编辑部</h4>
+                            <p>负责社团日常文字工作，内容包括新闻稿撰写、评论创作、审稿等。</p>
+                        </div>
+                        <div class="dept-card">
+                            <h4>媒体部</h4>
+                            <p>负责社团日常宣传工作，内容包括公众号推送制作、海报制作等。</p>
+                        </div>
+                        <div class="dept-card">
+                            <h4>组织部</h4>
+                            <p>负责社团活动组织，包括活动设计等。</p>
+                        </div>
+                        <div class="dept-card">
+                            <h4>广大的社员们</h4>
+                            <p>每一位热爱文字的你，都是社团最重要的组成部分。</p>
+                        </div>
+                    </div>
+                    <div class="quote-block">
+                        <p>在文学的世界里，我们安静、沉潜、漫游、追寻；在茫茫的人海里，我们擦肩而过，又粲然一笑。</p>
+                    </div>
+                </div>
+
+                <!-- 活动介绍 -->
+                <div class="recruit-card">
+                    <h2>活动介绍</h2>
+                    <div class="activity-item">在这里，<strong>风滚草诗集的传递</strong>，让我们书写一个亦虚亦实、似梦似幻、瑰丽奇谲充满诗意的世界。</div>
+                    <div class="activity-item">在这里，<strong>作品分享会的开展</strong>，让我们那么多有趣的灵魂书写独属于自己的华丽乐章，掩卷的思考、蓬勃的感情以各种形式呈现：诗歌、小说、散文……</div>
+                    <div class="activity-item">在这里，<strong>观影活动的举行</strong>，让我们流转于多彩的影像，流连于每一场异彩纷呈的旅程。</div>
+                    <p>在这里，我们有着负责认真专业的指导老师，也为大家铺设了作品发表的平台和多渠道的路径。我们希望将文字作为短暂时间里交换人生的线索，给所有文学创作者一个彼此交流和被人看见的机会。</p>
+                    <div class="quote-block">
+                        <p>「每个人都有属于自己的一片森林，也许我们从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。」</p>
+                    </div>
+                    <p>写诗，读诗，品诗，写小说，写文评，写影评，多样的团建，观影，观剧，甚至可以给剧本杀写测评。</p>
+                    <p>「浮萍破处见山影，小艇归时闻棹声」，享受偶然相逢的惊喜，收获冥冥之间的潜流着的乐趣。收留每一个，或谦卑或骄傲或孤独或冷峻的行人与过客。</p>
+                    <p>围炉夜话，百花齐放，只要 ta 愿意在硕大的校园里听见几声白鹭的嘤鸣。</p>
+                </div>
+
+                <!-- 结尾 -->
+                <div class="recruit-card closing">
+                    <p>「青山一道同云雨」，即使身处两乡，文学使我们相聚于同一轮明月之下；</p>
+                    <p>「蓬门今始为君开」，行至甬江之畔，天南海北的我们因文学而结下缘分。</p>
+                    <p>「偶然相聚，最是人间堪乐处」，收留踽踽独行者，包容嘤鸣相和声。</p>
+                    <p class="cta" style="margin-top: 24px;">嘤鸣文学评论社，期待你的到来！</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2026 嘤鸣文学评论社 · 嘤其鸣矣，求其友声</p>
+            <p class="footer-sub">Made with 💖 by 文学社的大家</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
