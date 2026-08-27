@@ -327,3 +327,62 @@ body {
         font-size: 0.85rem;
     }
 }
+
+/* --- 招新区块 --- */
+.recruit-wrap {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recruit-poster img {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(90, 62, 43, 0.18);
+    border: 1px solid #e8e0d5;
+}
+
+.recruit-info {
+    max-width: 440px;
+    padding-top: 8px;
+}
+
+.recruit-quote {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5a3e2b;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.recruit-info p {
+    margin-bottom: 14px;
+    color: #5a534a;
+}
+
+.recruit-slogan {
+    font-size: 1.05rem;
+    color: #8a6d3b;
+    letter-spacing: 2px;
+    border-left: 3px solid #c4a882;
+    padding-left: 12px;
+}
+
+@media (max-width: 768px) {
+    .recruit-wrap {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .recruit-info {
+        max-width: 100%;
+    }
+    .recruit-slogan {
+        border-left: none;
+        padding-left: 0;
+    }
+}
