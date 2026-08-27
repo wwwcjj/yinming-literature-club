@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘤鸣文学评论社 - 文学讨论</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-icon">📖</span>
+                <span class="brand-text">嘤鸣文学评论社</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="works/index.html">作品展示</a></li>
+                <li><a href="discussion.html" class="active">文学讨论</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 讨论区页头 -->
+    <header class="page-hero">
+        <div class="container">
+            <h1 class="page-hero-title">📚 文学讨论</h1>
+            <p class="page-hero-subtitle">奇文共欣赏，疑义相与析</p>
+        </div>
+    </header>
+
+    <!-- 讨论区 -->
+    <section class="section">
+        <div class="container">
+            <div id="waline-container">
+                <div id="waline-placeholder" class="waline-placeholder">
+                    <p class="waline-placeholder-title">📝 讨论区即将开放，敬请期待～</p>
+                    <p class="waline-placeholder-sub">社团正在搭建讨论模块，稍后就可以在这里畅聊文学啦。</p>
+                </div>
+                <div id="waline"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2026 嘤鸣文学评论社 · 嘤其鸣矣，求其友声</p>
+            <p class="footer-sub">Made with 💖 by 文学社的大家</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Waline 讨论区 —— 部署后端后，把 serverURL 换成你的 Vercel 地址即可激活
+        const serverURL = 'https://YOUR_WALINE_SERVER.vercel.app';
+        const placeholder = document.getElementById('waline-placeholder');
+        const walineEl = document.getElementById('waline');
+
+        if (serverURL.includes('YOUR_WALINE_SERVER')) {
+            // 后端未配置：显示占位提示
+            walineEl.style.display = 'none';
+        } else {
+            // 后端已配置：加载 Waline
+            placeholder.style.display = 'none';
+            const { init } = await import('https://unpkg.com/@waline/client@v3/dist/waline.mjs');
+            init({
+                el: '#waline',
+                serverURL: serverURL,
+                lang: 'zh-CN',
+                pageview: false,
+                emoji: true,
+            });
+        }
+    </script>
+</body>
+</html>
