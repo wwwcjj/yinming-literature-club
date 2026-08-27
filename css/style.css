@@ -329,16 +329,20 @@ body {
 }
 
 /* --- 招新区块 --- */
+.section-recruit {
+    padding: 50px 0;
+}
+
 .recruit-wrap {
     display: flex;
-    gap: 48px;
+    gap: 36px;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .recruit-poster img {
-    max-width: 340px;
+    max-width: 260px;
     width: 100%;
     height: auto;
     border-radius: 8px;
