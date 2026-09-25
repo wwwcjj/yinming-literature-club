@@ -9,7 +9,7 @@
 // 后端部署完成后，把 SERVER_URL 换成你的 Cloudflare Worker URL，例如：
 //   https://waline-on-worker.your-name.workers.dev
 // 还没部署时保持空字符串 ''，页面会显示「评论系统尚未连接」的提示。
-const SERVER_URL = '';
+const SERVER_URL = 'https://waline-on-worker.can4gaa1zeon3wwwcjj.workers.dev';
 
 // 未配置后端时的提示文案
 const NOT_READY_NOTICE = '💬 评论系统尚未连接：把 js/comments.js 里的 SERVER_URL 换成你的 Cloudflare Worker URL 就可以了～';
