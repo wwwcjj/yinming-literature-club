@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>嘤鸣文学评论社 - 文学讨论</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Waline 客户端样式（必须！否则评论框无样式，看不到登录/注册按钮） -->
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 </head>
 <body>
 
@@ -55,7 +57,7 @@
     </footer>
 
     <script type="module">
-        // Waline 讨论区 —— 部署后端后，把 serverURL 换成你的 Vercel 地址即可激活
+        // Waline 讨论区 —— 后端已部署在 Cloudflare Workers，serverURL 见下
         const serverURL = 'https://waline-on-worker.can4gaa1zeon3wwwcjj.workers.dev';
         const placeholder = document.getElementById('waline-placeholder');
         const walineEl = document.getElementById('waline');
