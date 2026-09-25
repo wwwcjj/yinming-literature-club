@@ -1,52 +1,148 @@
 # Waline 讨论区部署指南（站长专用）
 
 > 目标：让网站「文学讨论」页面真正可用。
-> 需要：一个 Vercel 账号（用 GitHub 登录）+ 一个 LeanCloud 国际版账号（免费）。
-> 预计耗时：15 分钟。配好后把 Vercel 地址发给唯酱，她填入网站即可激活。
+> **实际方案：Cloudflare Workers + D1**（不是 Vercel + LeanCloud）。
+> 现状：**已部署完成**，本站 `discussion.html` 已接入。
+> 预计耗时：首次约 20 分钟；日常维护几乎为零。
 
-## 第一步：注册 Vercel 并部署 Waline 后端
+---
 
-1. 打开 https://vercel.com  → 点 **Sign Up** → 选 **Continue with GitHub**（用你的 GitHub 账号登录，30 秒）。
-2. 登录后，点击这个一键部署链接：
-   `https://vercel.com/new/clone?repository-url=https://github.com/walinejs/vercel`
-   （如果链接失效，就打开 Waline 官方文档 https://waline.js.org/guide/get-started/ 找「Vercel 部署」按钮）
-3. Vercel 会让你选仓库名（随便，比如 `waline-server`），点 **Create** 开始部署。
-4. 部署完成后，记下你的后端地址，形如：`https://waline-server-xxxx.vercel.app`
-   （先别关页面，下一步要回去配环境变量）
+## 一、当前架构（已上线）
 
-## 第二步：注册 LeanCloud 国际版（免费数据库）
+| 部分 | 内容 |
+| --- | --- |
+| 后端 | `Waline_On_Worker`（Cloudflare Workers + D1 SQLite） |
+| 后端地址 | `https://waline-on-worker.can4gaa1zeon3wwwcjj.workers.dev` |
+| 数据库 | Cloudflare D1，库名 `waline-db` |
+| 前端 | `discussion.html`（全站讨论）+ `works/index.html`（分作品讨论） |
+| 前端接入点 | `discussion.html` 内 `serverURL`；`js/comments.js` 内 `SERVER_URL` |
+| 源码仓库 | `https://github.com/wwwcjj/yinming-literature-club` |
 
-1. 打开 https://console.leancloud.app/  → 注册账号（邮箱即可，国际版免费、无需实名）。
-2. 登录后点 **创建应用** → 名字随便填（比如 `yinming-discussion`）→ 选「开发版」（免费）。
-3. 进入应用 → 左侧菜单 **设置 → 应用凭证**，记下三个值：
-   - **AppID**（形如 `xxx-xxx-xxx`）
-   - **AppKey**
-   - **MasterKey**
-4. 注意：国际版不要勾选/使用「华东/华北节点」的国内版配置，保持默认国际版即可。
+---
 
-## 第三步：把数据库信息告诉 Waline 后端
+## 二、首次部署步骤（已执行，留档备查）
 
-1. 回到 Vercel 控制台 → 找到刚部署的项目 → **Settings → Environment Variables**（环境变量）。
-2. 添加三个变量：
-   - `LEAN_ID` = 你的 AppID
-   - `LEAN_KEY` = 你的 AppKey
-   - `LEAN_MASTER_KEY` = 你的 MasterKey
-3. 添加完后，回到 **Deployments** → 找到最新部署 → 点 **Redeploy**（重新部署）让它生效。
+### 1. 准备环境
 
-## 第四步：注册管理员
+```bash
+cd Waline_On_Worker
+npm install            # 依赖：hono、bcryptjs；dev：wrangler、vitest
+npx wrangler login     # 浏览器点 Allow 授权
+npx wrangler whoami    # 确认已登录、含 workers/d1 写权限
+```
 
-1. 浏览器打开 `https://你的地址.vercel.app/ui/register`（第一次访问会创建管理员账号）。
-2. 注册一个管理员（用你自己的邮箱），以后可以在这里删帖、置顶、管理讨论区。
+### 2. 创建并初始化 D1 数据库
 
-## 第五步：激活网站讨论区
+`wrangler.toml` 中 `[[d1_databases]]` 的 `binding` 必须保持为 `DB`：
 
-把后端地址发给唯酱（形如 `https://waline-server-xxxx.vercel.app`），她会：
-- 替换 `discussion.html` 里的 `serverURL`
-- 重新部署网站
-- 讨论区正式开放 🎉
+```toml
+[[d1_databases]]
+binding = "DB"
+database_name = "waline-db"
+database_id = "f0dfe641-53fa-4ed2-b612-2554b159eef6"
+```
 
-## 常见问题
+建表（远程库）：
 
-- **评论发不出去？** 检查 LeanCloud 的三个 Key 是否填对、Vercel 是否 Redeploy 过。
-- **想换数据库？** Waline 也支持 MongoDB 等，但 LeanCloud 免费版对社团完全够用。
-- **国内访问 Vercel 慢？** 一般可以接受；如果太慢，后续可考虑绑定自定义域名或换国内托管。
+```bash
+npx wrangler d1 execute waline-db --file=./schema.sql --remote
+```
+
+验证表已建好：
+
+```bash
+npx wrangler d1 execute waline-db --remote \
+  --command "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;"
+```
+
+应看到 `wl_Comment`、`wl_Counter`、`wl_Settings`、`wl_Users`。
+
+### 3. 设置 JWT 密钥
+
+```bash
+npx wrangler secret put JWT_SECRET
+```
+
+提示 `? Enter a secret value:` 时粘贴一串随机密钥（例如
+`head -c 48 /dev/urandom | base64 | tr -d '/+=' | head -c 48` 生成），回车即可。
+
+### 4. 限定跨域来源（防止别人白嫖你的后端）
+
+`wrangler.toml`：
+
+```toml
+[vars]
+SECURE_DOMAINS = "wwwcjj.github.io"
+```
+
+改完必须重新部署才生效：
+
+```bash
+npx wrangler deploy
+```
+
+### 5. 部署
+
+```bash
+npx wrangler deploy
+```
+
+输出中的 `https://waline-on-worker.<子域>.workers.dev` 就是后端地址。
+
+---
+
+## 三、前端接入
+
+- **全站讨论页** `discussion.html`：
+
+  ```js
+  const serverURL = 'https://waline-on-worker.can4gaa1zeon3wwwcjj.workers.dev';
+  ```
+
+  未填写时页面显示「讨论区即将开放」占位提示。
+
+- **分作品讨论** `works/index.html` + `js/comments.js`：
+
+  ```js
+  const SERVER_URL = 'https://waline-on-worker.can4gaa1zeon3wwwcjj.workers.dev';
+  ```
+
+  点作品卡片下的「来聊聊这篇 →」会切换到该作品独立的话题路径
+  （`works/index.html#作品名`）。
+
+---
+
+## 四、注册管理员（重要）
+
+1. 打开**已部署到 GitHub Pages 的**讨论页：
+   `https://wwwcjj.github.io/yinming-literature-club/discussion.html`
+2. 点评论框的「登录」→ 切到「注册」，用你的邮箱注册。
+3. **第一个注册的用户会自动成为管理员**，所以务必抢在他人之前注册。
+4. 管理面板：`https://waline-on-worker.can4gaa1zeon3wwwcjj.workers.dev/ui`
+   可审核、置顶、删除评论，管理用户。
+
+> 注意：管理员注册应在**公网页面**上完成，不要只在 `127.0.0.1` 本地预览里注册，
+> 否则绑定的域名/来源可能不符。
+
+---
+
+## 五、常见问题
+
+- **评论发不出去？** 检查 `SECURE_DOMAINS` 是否包含网站的准确域名
+  （当前 `wwwcjj.github.io`），改完要 `npx wrangler deploy` 重新部署。
+- **页面显示「尚未连接/即将开放」？** 说明 `serverURL` 还是占位符，或 Worker 地址写错。
+- **`.workers.dev` 打不开？** 本地 DNS 污染所致，开代理/梯子即可；
+  也可用 SSH over 443 推送代码（`ssh.github.com:443`）。
+- **想换数据库？** 本方案用 Cloudflare D1，不是 LeanCloud；如需迁移可导出评论后重灌。
+- **国内访问慢？** Cloudflare 香港节点一般可接受；必要时绑定自定义域名。
+
+---
+
+## 六、日常维护
+
+| 操作 | 命令 |
+| --- | --- |
+| 重新部署后端 | `npx wrangler deploy` |
+| 查看线上日志 | `npx wrangler tail` |
+| 备份评论数据 | 管理面板导出，或 `npx wrangler d1 export waline-db --remote --output bak.sql` |
+| 修改数据库结构 | 改 `schema.sql` 后重新 `d1 execute` |
