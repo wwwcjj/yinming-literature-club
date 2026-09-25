@@ -31,13 +31,13 @@ const NOT_READY_NOTICE = '💬 评论系统尚未连接：把 js/comments.js 里
     (function loadWalineClient() {
         const css = document.createElement('link');
         css.rel = 'stylesheet';
-        css.href = 'https://unpkg.com/@waline/client@3/dist/waline.css';
+        css.href = '../vendor/waline/waline.css';
         document.head.appendChild(css);
 
         const js = document.createElement('script');
         js.type = 'module';
         js.textContent = [
-            "import { init } from 'https://unpkg.com/@waline/client@3/dist/waline.mjs';",
+            "import { init } from '../vendor/waline/waline.js';",
             'window.__initWaline = init;',
             "window.dispatchEvent(new Event('waline-ready'));"
         ].join('\n');
