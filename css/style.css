@@ -295,6 +295,36 @@ body {
     color: #5a4a3a;
 }
 
+/* --- 评论区 --- */
+.comment-hint {
+    text-align: center;
+    color: #b8a898;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.comment-notice {
+    text-align: center;
+    color: #8a7b6a;
+    background: #fff;
+    border: 1px dashed #e8e0d5;
+    border-radius: 8px;
+    padding: 32px 24px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+#waline {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.work-link-active {
+    color: #c4a882 !important;
+    font-weight: 600;
+}
+
 /* --- 页脚 --- */
 .footer {
     background: #5a3e2b;
