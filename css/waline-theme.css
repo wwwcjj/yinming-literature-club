@@ -1,0 +1,151 @@
+/* ===== Waline 讨论区皮肤 —— 契合「嘤鸣文学评论社」深棕主题 =====
+   小提琴木 + 咖啡色系：深棕 #3b2415 / 奶油纸 #f7f2ea / 琴漆金 #b08a52
+   衬线字体，圆角，暖棕边框，与全站风格统一。 */
+
+/* --- 容器与字体 --- */
+#waline,
+.waline {
+    --waline-font-size: 15px;
+    --waline-font-family: "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+    --waline-theme-color: #3b2415;
+    --waline-active-color: #2a180c;
+    --waline-color: #4a3826;
+    --waline-bg-color: #ffffff;
+    --waline-bg-color-light: #f7f2ea;
+    --waline-bg-color-hover: #efe5d5;
+    --waline-bg-color-disable: #efe5d5;
+    --waline-border-color: #ded0ba;
+    --waline-disable-bg-color: #efe5d5;
+    --waline-disable-color: #a3907a;
+    --waline-code-bg-color: #3b2415;
+    --waline-bq-color: #efe5d5;
+    --waline-avatar-radius: 6px;
+    --waline-box-shadow: 0 2px 12px rgba(59, 36, 21, 0.06);
+
+    font-family: var(--waline-font-family);
+}
+
+/* --- 输入框：奶油底 + 暖棕边 + 圆角 --- */
+#waline .wl-editor,
+#waline .wl-input,
+#waline .wl-panel,
+#waline .wl-comment {
+    border-radius: 8px !important;
+    border-color: #ded0ba !important;
+    background: #fff;
+}
+
+#waline .wl-editor:focus,
+#waline .wl-input:focus {
+    border-color: #b08a52 !important;
+    box-shadow: 0 0 0 3px rgba(176, 138, 82, 0.12);
+}
+
+#waline textarea {
+    font-family: var(--waline-font-family);
+    line-height: 1.9;
+    color: #4a3826;
+}
+
+/* --- 发表按钮：深棕底 + 奶油字 --- */
+#waline .wl-btn.primary,
+#waline .wl-btn-primary {
+    background: #3b2415 !important;
+    border-color: #3b2415 !important;
+    color: #f7f2ea !important;
+    border-radius: 6px;
+    letter-spacing: 2px;
+    transition: background 0.3s;
+}
+
+#waline .wl-btn.primary:hover,
+#waline .wl-btn-primary:hover {
+    background: #2a180c !important;
+    border-color: #2a180c !important;
+}
+
+#waline .wl-btn {
+    border-radius: 6px;
+    border-color: #ded0ba;
+    color: #4a3826;
+}
+
+#waline .wl-btn:hover {
+    border-color: #b08a52;
+    color: #3b2415;
+}
+
+/* --- 头像圆角 --- */
+#waline .wl-avatar,
+#waline .wl-avatar img {
+    border-radius: 6px;
+}
+
+/* --- 昵称 / 时间 / 正文文字 --- */
+#waline .wl-nick {
+    color: #3b2415;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#waline .wl-time,
+#waline .wl-meta {
+    color: #a3907a;
+}
+
+#waline .wl-content {
+    color: #4a3826;
+    line-height: 1.9;
+}
+
+#waline .wl-content a {
+    color: #7a5c3a;
+}
+
+#waline .wl-content a:hover {
+    color: #3b2415;
+}
+
+/* --- 引用块 --- */
+#waline blockquote {
+    border-left: 3px solid #b08a52;
+    background: #efe5d5;
+    color: #4a3826;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 14px;
+}
+
+/* --- 评论之间的分隔 --- */
+#waline .wl-comment {
+    border-bottom: 1px solid #efe5d5;
+}
+
+/* --- 空状态 / 计数 --- */
+#waline .wl-empty {
+    color: #a3907a;
+    letter-spacing: 1px;
+}
+
+#waline .wl-count {
+    color: #3b2415;
+    font-weight: 600;
+}
+
+/* --- 登录 / 注册 入口 --- */
+#waline .wl-login-nick,
+#waline .wl-login-info {
+    color: #4a3826;
+}
+
+/* --- 表情面板 --- */
+#waline .wl-emoji-popup {
+    border-color: #ded0ba;
+    border-radius: 8px;
+}
+
+/* --- 回复框引用条 --- */
+#waline .wl-reply {
+    background: #efe5d5;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
