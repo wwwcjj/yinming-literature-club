@@ -1,0 +1,176 @@
+/* ===== Twikoo 讨论区皮肤 —— 契合「嘤鸣文学评论社」深棕主题 =====
+   小提琴木 + 咖啡色系：深棕 #3b2415 / 奶油纸 #f7f2ea / 琴漆金 #b08a52
+   衬线字体，圆角，暖棕边框，与全站风格统一。
+
+   Twikoo 的类名前缀为 tk-（Walines 的 wl- 不适用）。 */
+
+/* --- 容器与字体 --- */
+#waline,
+#tcomment,
+.tk-comments {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+    font-size: 15px;
+    color: #4a3826;
+}
+
+/* --- 输入框：奶油底 + 暖棕边 + 圆角 --- */
+#waline .tk-input,
+#tcomment .tk-input,
+.tk-input {
+    border: 1px solid #ded0ba !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #4a3826 !important;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#waline .tk-input:focus,
+#tcomment .tk-input:focus,
+.tk-input:focus {
+    border-color: #b08a52 !important;
+    box-shadow: 0 0 0 3px rgba(176, 138, 82, 0.12) !important;
+    outline: none;
+}
+
+.tk-input-el,
+.tk-meta-input .el-input__inner {
+    background: #fff !important;
+    color: #4a3826 !important;
+    border-color: #ded0ba !important;
+}
+
+/* --- 发表按钮：深棕底 + 奶油字 --- */
+.tk-submit button,
+.tk-submit .el-button--primary,
+.tk-comments .el-button--primary {
+    background: #3b2415 !important;
+    border-color: #3b2415 !important;
+    color: #f7f2ea !important;
+    border-radius: 6px !important;
+    letter-spacing: 2px;
+    transition: background 0.3s;
+}
+
+.tk-submit button:hover,
+.tk-submit .el-button--primary:hover,
+.tk-comments .el-button--primary:hover {
+    background: #2a180c !important;
+    border-color: #2a180c !important;
+}
+
+.tk-submit .el-button {
+    border-radius: 6px;
+}
+
+/* --- 头像圆角 --- */
+.tk-avatar,
+.tk-avatar-img,
+.tk-avatar .tk-avatar-img {
+    border-radius: 6px !important;
+}
+
+/* --- 昵称 / 时间 / 正文 --- */
+.tk-nick,
+.tk-nick a,
+.tk-nick-link {
+    color: #3b2415 !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.tk-time,
+.tk-meta {
+    color: #a3907a !important;
+}
+
+.tk-content {
+    color: #4a3826 !important;
+    line-height: 1.9;
+}
+
+.tk-content a {
+    color: #7a5c3a !important;
+    border-bottom: 1px solid #ded0ba;
+}
+
+.tk-content a:hover {
+    color: #3b2415 !important;
+}
+
+/* --- 引用块 --- */
+.tk-content blockquote {
+    border-left: 3px solid #b08a52 !important;
+    background: #efe5d5 !important;
+    color: #4a3826 !important;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 14px;
+    margin: 8px 0;
+}
+
+/* --- 评论条目分隔 --- */
+.tk-comments-container .tk-comment {
+    border-bottom: 1px solid #efe5d5;
+    padding-bottom: 12px;
+}
+
+/* --- 操作按钮（回复 / 点赞）--- */
+.tk-action-link,
+.tk-action-icon,
+.tk-action-count {
+    color: #a3907a !important;
+    transition: color 0.3s;
+}
+
+.tk-action-link:hover,
+.tk-action-link:hover .tk-action-icon,
+.tk-action-link:hover .tk-action-count {
+    color: #3b2415 !important;
+}
+
+/* --- 空状态 / 计数 --- */
+.tk-comments-no {
+    color: #a3907a !important;
+    letter-spacing: 1px;
+}
+
+.tk-comments-count {
+    color: #3b2415 !important;
+    font-weight: 600;
+}
+
+.tk-comments-title {
+    color: #3b2415 !important;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* --- 错误提示 --- */
+.tk-comments-error {
+    color: #8a6a3a !important;
+}
+
+/* --- 预览区 --- */
+.tk-preview-container {
+    border: 1px dashed #ded0ba !important;
+    background: #f7f2ea !important;
+    border-radius: 8px;
+}
+
+/* --- 展开按钮 --- */
+.tk-content-expand {
+    color: #7a5c3a !important;
+    background: linear-gradient(180deg, rgba(247, 242, 234, 0) 0%, #f7f2ea 100%) !important;
+}
+
+/* --- 未配置后端时的占位提示 --- */
+.comment-notice {
+    text-align: center;
+    color: #75604a;
+    background: #fff;
+    border: 1px dashed #ded0ba;
+    border-radius: 8px;
+    padding: 32px 24px;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    letter-spacing: 1px;
+}

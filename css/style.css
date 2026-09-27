@@ -443,23 +443,4 @@ body {
 }
 
 /* --- 讨论区 --- */
-.waline-placeholder {
-    max-width: 560px;
-    margin: 0 auto;
-    text-align: center;
-    background: #fff;
-    border: 1px dashed #b08a52;
-    border-radius: 8px;
-    padding: 60px 30px;
-}
-
-.waline-placeholder-title {
-    font-size: 1.2rem;
-    color: #3b2415;
-    margin-bottom: 10px;
-}
-
-.waline-placeholder-sub {
-    color: #75604a;
-    font-size: 0.9rem;
-}
+/* 详见 css/waline-theme.css（Waline 深棕主题皮肤） */

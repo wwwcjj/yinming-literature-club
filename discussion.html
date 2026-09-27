@@ -6,8 +6,8 @@
     <title>嘤鸣文学评论社 - 文学讨论</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Waline 客户端样式（必须！否则评论框无样式，看不到登录/注册按钮） -->
+    <!-- Waline 客户端样式 + 深棕主题皮肤 -->
     <link rel="stylesheet" href="vendor/waline/waline.css">
-    <!-- 深棕主题皮肤：让评论区与全站风格统一 -->
     <link rel="stylesheet" href="css/waline-theme.css">
 </head>
 <body>
@@ -40,13 +40,7 @@
     <!-- 讨论区 -->
     <section class="section">
         <div class="container">
-            <div id="waline-container">
-                <div id="waline-placeholder" class="waline-placeholder">
-                    <p class="waline-placeholder-title">📝 讨论区即将开放，敬请期待～</p>
-                    <p class="waline-placeholder-sub">社团正在搭建讨论模块，稍后就可以在这里畅聊文学啦。</p>
-                </div>
-                <div id="waline"></div>
-            </div>
+            <div id="waline"></div>
         </div>
     </section>
 
@@ -58,28 +52,11 @@
         </div>
     </footer>
 
-    <script type="module">
-        // Waline 讨论区 —— 后端已部署在 Cloudflare Workers，serverURL 见下
-        const serverURL = 'https://waline-on-worker.can4gaa1zeon3wwwcjj.workers.dev';
-        const placeholder = document.getElementById('waline-placeholder');
-        const walineEl = document.getElementById('waline');
-
-        if (serverURL.includes('YOUR_WALINE_SERVER')) {
-            // 后端未配置：显示占位提示
-            walineEl.style.display = 'none';
-        } else {
-            // 后端已配置：加载 Waline
-            placeholder.style.display = 'none';
-            // 本地文件，不依赖外部 CDN（国内网络友好）
-            const { init } = await import('./vendor/waline/waline.js');
-            init({
-                el: '#waline',
-                serverURL: serverURL,
-                lang: 'zh-CN',
-                pageview: false,
-                emoji: true,
-            });
-        }
-    </script>
+    <!-- 配置：部署后在此填 WALINE_SERVER_URL -->
+    <script src="js/waline-config.js"></script>
+    <!-- Waline 前端（本地 vendor，样式见上方 link） -->
+    <script src="vendor/waline/waline.js"></script>
+    <!-- 评论区逻辑 -->
+    <script src="js/waline-comments.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
     <title>作品展示 - 嘤鸣文学评论社</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- 深棕主题皮肤：让评论区与全站风格统一 -->
+    <!-- Waline 客户端样式 + 深棕主题皮肤 -->
     <link rel="stylesheet" href="../vendor/waline/waline.css">
     <link rel="stylesheet" href="../css/waline-theme.css">
     <style>
@@ -108,7 +109,11 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <!-- 作品讨论区逻辑（含配置）：../js/comments.js -->
-    <script src="../js/comments.js"></script>
+    <!-- 配置：部署后在此填 WALINE_SERVER_URL -->
+    <script src="../js/waline-config.js"></script>
+    <!-- Waline 前端（本地 vendor） -->
+    <script src="../vendor/waline/waline.js"></script>
+    <!-- 作品讨论区逻辑 -->
+    <script src="../js/waline-comments.js"></script>
 </body>
 </html>
