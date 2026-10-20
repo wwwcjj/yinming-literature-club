@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作品展示 - 嘤鸣文学评论社</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- 深棕主题皮肤：让评论区与全站风格统一 -->
-    <!-- Waline 客户端样式 + 深棕主题皮肤 -->
-    <link rel="stylesheet" href="../vendor/waline/waline.css">
-    <link rel="stylesheet" href="../css/waline-theme.css">
+    <link rel="stylesheet" href="../css/giscus-theme.css">
     <style>
         .works-list {
             max-width: 700px;
@@ -97,7 +94,7 @@
         <div class="container">
             <h2 class="section-title">💬 作品讨论</h2>
             <p class="comment-hint">点上面的「来聊聊这篇」可以切换讨论的话题，大家随便聊～</p>
-            <div id="waline"></div>
+            <div id="giscus"></div>
         </div>
     </section>
 
@@ -109,11 +106,7 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <!-- 配置：部署后在此填 WALINE_SERVER_URL -->
-    <script src="../js/waline-config.js"></script>
-    <!-- Waline 前端（本地 vendor） -->
-    <script src="../vendor/waline/waline.js"></script>
-    <!-- 作品讨论区逻辑 -->
-    <script src="../js/waline-comments.js"></script>
+    <script src="../js/giscus-config.js"></script>
+    <script src="../js/giscus-comments.js"></script>
 </body>
 </html>

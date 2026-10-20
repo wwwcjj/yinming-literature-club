@@ -1,0 +1,20 @@
+/* Giscus 外层容器主题。评论内容位于跨域 iframe 内，由 data-theme 控制。 */
+#giscus {
+    min-height: 180px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #ded0ba;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(59, 36, 21, 0.04);
+}
+
+#giscus .giscus {
+    max-width: 100%;
+}
+
+.comment-notice {
+    margin: 0;
+    text-align: center;
+    color: #75604a;
+    line-height: 1.9;
+}

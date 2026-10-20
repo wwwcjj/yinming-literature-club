@@ -1,4 +1,6 @@
-# Twikoo 接入配置（腾讯云 EdgeOne Pages 版）
+# Twikoo 接入配置（历史备用方案）
+
+> 当前网站已经改用 GitHub Discussions + Giscus。本文保留作为腾讯云方案的备用记录。
 
 > 用途：替换原来的 Cloudflare Worker + Waline，让校园网**不挂梯子**也能评论。
 > 原理：Twikoo 后端跑在**腾讯云 EdgeOne Pages**（国内节点），前端只需要一个 `envId`。
