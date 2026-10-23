@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作品展示 - 嘤鸣文学评论社</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/giscus-theme.css">
+    <link rel="stylesheet" href="../css/leancloud-theme.css">
     <style>
         .works-list {
             max-width: 700px;
@@ -94,7 +94,8 @@
         <div class="container">
             <h2 class="section-title">💬 作品讨论</h2>
             <p class="comment-hint">点上面的「来聊聊这篇」可以切换讨论的话题，大家随便聊～</p>
-            <div id="giscus"></div>
+            <div id="leancloud-comments"></div>
+            <p class="giscus-backup-link">GitHub 登录不方便？也可以前往 <a href="https://github.com/wwwcjj/yinming-literature-club/discussions" target="_blank" rel="noopener">GitHub 备用讨论区</a>。</p>
         </div>
     </section>
 
@@ -106,7 +107,8 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <script src="../js/giscus-config.js"></script>
-    <script src="../js/giscus-comments.js"></script>
+    <script src="../js/leancloud-config.js"></script>
+    <script src="../vendor/leancloud/av-min.js"></script>
+    <script src="../js/leancloud-comments.js"></script>
 </body>
 </html>

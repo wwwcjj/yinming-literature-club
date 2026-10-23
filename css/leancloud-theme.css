@@ -1,0 +1,27 @@
+/* LeanCloud 评论区：与嘤鸣文学评论社深棕配色统一。 */
+#leancloud-comments { color: #4a3826; }
+.lc-heading, .lc-form-row, .lc-comment-meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.lc-heading h2 { margin: 0 0 6px; color: #3b2415; }
+.lc-heading p, .lc-form-row span, .lc-comment-meta time { color: #a3907a; font-size: .9rem; }
+.lc-auth-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.lc-card { padding: 24px; margin-top: 20px; background: #fff; border: 1px solid #ded0ba; border-radius: 8px; }
+.lc-card h3 { margin: 0 0 16px; color: #3b2415; }
+.lc-card input, .lc-card textarea { display: block; width: 100%; padding: 11px 13px; margin: 10px 0; border: 1px solid #ded0ba; border-radius: 6px; background: #fff; color: #4a3826; font: inherit; }
+.lc-card textarea { min-height: 130px; resize: vertical; line-height: 1.8; }
+.lc-card input:focus, .lc-card textarea:focus { outline: none; border-color: #b08a52; box-shadow: 0 0 0 3px rgba(176, 138, 82, .12); }
+.lc-button { padding: 9px 18px; border: 1px solid #3b2415; border-radius: 6px; background: #3b2415; color: #f7f2ea; cursor: pointer; font: inherit; }
+.lc-button:hover { background: #2a180c; }
+.lc-ghost { background: transparent; color: #3b2415; }
+.lc-message { min-height: 28px; padding: 12px 0 0; color: #75604a; }
+.lc-message.error, .lc-error { color: #a23b2b; }
+.lc-list { margin-top: 20px; }
+.lc-comment { padding: 18px 0; border-bottom: 1px solid #efe5d5; }
+.lc-comment-meta strong { color: #3b2415; }
+.lc-comment p { margin: 8px 0 0; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; }
+.lc-loading, .lc-empty { color: #a3907a; text-align: center; padding: 24px; }
+.lc-notice { padding: 30px 24px; background: #fff; border: 1px dashed #ded0ba; border-radius: 8px; text-align: center; line-height: 1.9; }
+.lc-notice strong { color: #3b2415; }
+.lc-notice code { padding: 2px 5px; background: #f7f2ea; border-radius: 4px; }
+.giscus-backup-link { margin-top: 20px; color: #a3907a; text-align: center; font-size: .9rem; }
+.giscus-backup-link a, .lc-notice a { color: #7a5c3a; }
+@media (max-width: 640px) { .lc-auth-grid { grid-template-columns: 1fr; gap: 0; } .lc-heading { align-items: flex-start; flex-direction: column; } .lc-card { padding: 18px; } }
