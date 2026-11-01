@@ -4,6 +4,21 @@
     const status = document.getElementById('submission-status');
     if (!form || !status) return;
 
+    const formURL = String(window.SUBMISSION_FORM_URL || '').trim();
+    if (formURL) {
+        const host = document.getElementById('embedded-submission');
+        const frame = document.createElement('iframe');
+        frame.src = formURL;
+        frame.title = '文学社投稿表单';
+        frame.loading = 'lazy';
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        host.appendChild(frame);
+        form.hidden = true;
+        status.innerHTML = '如果表单没有显示，请<a href="' + formURL.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">在新页面打开投稿表单</a>。';
+        status.className = 'submission-status success';
+        return;
+    }
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         const data = new FormData(form);

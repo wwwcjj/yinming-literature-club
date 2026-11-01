@@ -19,6 +19,8 @@
 #submission-form textarea { min-height: 180px; resize: vertical; line-height: 1.8; }
 #submission-form input:focus, #submission-form select:focus, #submission-form textarea:focus { outline: none; border-color: #b08a52; box-shadow: 0 0 0 3px rgba(176,138,82,.12); }
 .submit-button { margin: 18px 0 0; cursor: pointer; }
+.submission-embed { width: 100%; }
+#embedded-submission iframe { display: block; width: 100%; min-height: 620px; border: 1px solid #ded0ba; border-radius: 6px; background: #fff; }
 .submission-status { min-height: 24px; margin: 10px 0 0; font-size: .88rem; }
 .submission-status.error { color: #a23b2b; }
 .submission-status.success { color: #55724b; }
