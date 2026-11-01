@@ -1,0 +1,25 @@
+.share-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(300px, .8fr); gap: 42px; align-items: start; }
+.share-intro { margin-bottom: 28px; }
+.share-intro h2, .submit-card h2 { margin: 8px 0 10px; color: #3b2415; }
+.share-intro p, .submit-note { color: #75604a; }
+.share-kicker { color: #b08a52; font-size: .82rem; letter-spacing: 3px; }
+.post-list { display: grid; gap: 20px; }
+.post-card, .submit-card { background: #fff; border: 1px solid #ded0ba; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
+.post-card { padding: 28px; }
+.post-meta { display: flex; justify-content: space-between; color: #a3907a; font-size: .85rem; }
+.post-meta span { color: #7a5c3a; }
+.post-card h3 { margin: 12px 0 2px; color: #3b2415; font-size: 1.3rem; }
+.post-author { margin-bottom: 10px; color: #a3907a; font-size: .9rem; }
+.post-card p:not(.post-author) { color: #4a3826; line-height: 1.9; }
+.post-link { display: inline-block; margin-top: 14px; color: #7a5c3a; text-decoration: none; }
+.submit-card { padding: 26px; position: sticky; top: 90px; }
+.submit-note { font-size: .9rem; line-height: 1.8; }
+#submission-form label { display: block; margin-top: 14px; color: #4a3826; font-size: .9rem; }
+#submission-form input, #submission-form select, #submission-form textarea { display: block; width: 100%; margin-top: 6px; padding: 10px 12px; border: 1px solid #ded0ba; border-radius: 6px; background: #fff; color: #4a3826; font: inherit; }
+#submission-form textarea { min-height: 180px; resize: vertical; line-height: 1.8; }
+#submission-form input:focus, #submission-form select:focus, #submission-form textarea:focus { outline: none; border-color: #b08a52; box-shadow: 0 0 0 3px rgba(176,138,82,.12); }
+.submit-button { margin: 18px 0 0; cursor: pointer; }
+.submission-status { min-height: 24px; margin: 10px 0 0; font-size: .88rem; }
+.submission-status.error { color: #a23b2b; }
+.submission-status.success { color: #55724b; }
+@media (max-width: 760px) { .share-layout { grid-template-columns: 1fr; gap: 28px; } .submit-card { position: static; } }

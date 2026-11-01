@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文学分享 - 嘤鸣文学评论社</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/share.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand"><span class="brand-icon">📖</span><span class="brand-text">嘤鸣文学评论社</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="works/index.html">作品展示</a></li>
+                <li><a href="share.html" class="active">文学分享</a></li>
+                <li><a href="recruit.html">招新</a></li>
+                <li><a href="discussion.html">文学讨论</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <h1 class="page-hero-title">✒️ 文学分享</h1>
+            <p class="page-hero-subtitle">写下你与一本书、一个故事相遇时的心情</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container share-layout">
+                <div>
+                    <div class="share-intro">
+                        <span class="share-kicker">嘤鸣帖</span>
+                        <h2>最近的分享</h2>
+                        <p>这里收录社员的读书感悟、文学随笔和故事分享。每一篇投稿都会先由社团编辑阅读，确认后再发布。</p>
+                    </div>
+                    <div class="post-list">
+                        <article class="post-card">
+                            <div class="post-meta"><span>读书感悟</span><time>2026.10.20</time></div>
+                            <h3>在《边城》的渡口等一场雨</h3>
+                            <p class="post-author">—— 林同学</p>
+                            <p>翠翠等待的也许不只是一个人。读完这本书以后，我总觉得那个渡口像一处被时间留下的空白，等着每个人把自己的故事放进去。</p>
+                            <a class="post-link" href="#submit">我要投稿回应 →</a>
+                        </article>
+                        <article class="post-card">
+                            <div class="post-meta"><span>故事分享</span><time>2026.10.12</time></div>
+                            <h3>我们为什么还要讲故事</h3>
+                            <p class="post-author">—— 陈同学</p>
+                            <p>故事让陌生人的生活暂时向彼此打开。哪怕只有几页纸，我们也能在别人的命运里认出一点自己的影子。</p>
+                            <a class="post-link" href="#submit">我要投稿回应 →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="submit-card" id="submit">
+                    <span class="share-kicker">投稿入口</span>
+                    <h2>把你的想法寄给我们</h2>
+                    <p class="submit-note">投稿不会自动公开。提交后，编辑会先阅读并使用 AI 做内容初筛，最终由编辑确认是否发布。</p>
+                    <form id="submission-form">
+                        <label>标题<input name="title" maxlength="80" required placeholder="例如：我在某本书里看到的冬天"></label>
+                        <label>署名<input name="author" maxlength="30" required placeholder="可以使用笔名"></label>
+                        <label>类型<select name="category"><option>读书感悟</option><option>故事分享</option><option>文学随笔</option><option>活动回顾</option></select></label>
+                        <label>正文<textarea name="content" maxlength="6000" required placeholder="写下你的阅读感受或故事……"></textarea></label>
+                        <label>联系方式（可选）<input name="contact" maxlength="100" placeholder="方便编辑联系你"></label>
+                        <button class="btn btn-primary submit-button" type="submit">生成投稿邮件</button>
+                        <p id="submission-status" class="submission-status" aria-live="polite"></p>
+                    </form>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p class="footer-text">© 2026 嘤鸣文学评论社 · 嘤其鸣矣，求其友声</p><p class="footer-sub">Made with 💖 by 文学社的大家</p></div>
+    </footer>
+    <script src="js/submission-config.js"></script>
+    <script src="js/submission.js"></script>
+</body>
+</html>
